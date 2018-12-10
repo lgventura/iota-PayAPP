@@ -1,0 +1,63 @@
+<div class="container body">
+  <div class="main_container">
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="index.html" class="site_title"><i class="fa fa-car"></i>
+          <span>Estacionamento</span></a>
+        </div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+          <div class="profile_info">
+            <i class="fa fa-user"> </i><span> Bem vindo,</span>
+            <h2><%= dados[0].nome;%></h2>
+          </div>
+        </div>
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <h3>Menu</h3>
+            <ul class="nav side-menu">
+              <li><a href="/home/<%= dados[0].id;%>"><i class="fa fa-credit-card"></i> Home / Estacionamento </a></li>
+              <li><a href="/transactions/<%= dados[0].id;%>"><i class="fa fa-bar-chart"></i> Transações </a></li>
+              <% if(dados[0].acesso == 2) { %>
+                <li><a href="/admin/<%= dados[0].id;%>"><i class="fa fa-institution"></i> Admin </a></li>
+              <% } %>
+
+            </ul>
+          </div>
+        </div>
+        <!-- /sidebar menu -->
+
+      </div>
+    </div>
+
+    <!-- top navigation -->
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav>
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="">
+              <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <%= dados[0].nome; %>
+                <span class=" fa fa-angle-down"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-usermenu pull-right">
+                <li><a href="javascript:;"> Minha Conta</a></li>
+                <li><a href="javascript:;">Ajuda</a></li>
+                <li><a href="/"><i class="fa fa-sign-out pull-right"></i> Sair </a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </nav>
+      </div>
+    </div>

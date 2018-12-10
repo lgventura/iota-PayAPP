@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <% include ./template/head %>
+
+  <body class="nav-md">
+    <% include ./template/header %>
+
+    <div class="right_col" role="main">
+      <div class="">
+        <% if(typeof transacoes != 'undefined'){ %>
+            <% for (var key in transacoes){ %>
+              <div class="row top_tiles">
+                <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div class="tile-stats">
+                    <h4 style="margin-left:10px; color: #2a61b9"><i class="fa fa-exchange"></i>  Hash da Transação</h4>
+                        <div class="count" style="word-wrap: break-word; font-size: 12px"><%= transacoes[key].hash %></div>
+                        <%
+                          var data = new Date(transacoes[key].data_hora);
+                          dia = data.getDate();
+                          mes = data.getMonth()+1;
+                          ano = data.getFullYear();
+                          hora = data.getHours();
+                          min = data.getMinutes();
+                          dataTransacao = dia+"/"+mes+"/"+ano+" "+hora+":"+min;
+
+                          if(transacoes[key].tipo == 0){
+                            tipo = "Entrada";
+                          }else if(transacoes[key].tipo == 1){
+                            tipo = "Saida";
+                          }
+
+                          if(transacoes[key].tempo == 0){
+                            tempo = "solicitação de Saída";
+                          }else{
+                            tempo = transacoes[key].tempo+" Minutos";
+                          }
+                        %>
+                        <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th style="width:33%">Tipo de transação</th>
+                              <th style="width:33%">Data e hora</th>
+                              <th style="width:33%">Tempo Contratado</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><%= tipo %></td>
+                              <td><%= dataTransacao %></td>
+                              <td><%= tempo %></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+              </div>
+          <% } %>
+        <% }else{ %>
+        <div class="row top_tiles">
+          <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tile-stats">
+              <h4 style="margin-left:10px; color: red"><i class="fa fa-thumbs-up"></i>  Você ainda não realizou nenhuma transação no sistema</h4>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <% include ./template/footer %>
+  </body>
+</html>

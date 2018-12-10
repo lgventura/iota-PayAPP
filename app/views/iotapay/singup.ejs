@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <% include ./template/head %>
+
+  <body class="nav-md">
+
+    <!-- page content -->
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <h1>Cadastro</h1>
+
+              </div>
+              <div class="x_content">
+
+                <form class="form-horizontal form-label-left" action="/singup" method="post" novalidate>
+
+                  <span class="section">Informações Pessoais</span>
+
+                  <% if(erros){ %>
+                    <div class="x_content bs-example-popovers">
+                      <div class="alert alert-danger alert-dismissible fade in" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+                        </button>
+                        <strong><%= erros; %></strong>
+                      </div>
+                    </div>
+                  <% } %>
+
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Nome <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="nome" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirmação de Email <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">SEED - IOTA <span class="required">*</span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input class="form-control col-md-7 col-xs-12" data-validate-length-range="81" data-validate-words="1" name="seed" placeholder="Cole aqui sua SEED (Deve conter 81 caracteres de A - Z e apenas o algarismo 9)" required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Caso não possua uma SEED <span class="required"></span>
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Clique aqui</button>
+
+                      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                              </button>
+                              <h4 class="modal-title" id="myModalLabel2">Instruções para criar uma SEED</h4>
+                            </div>
+                            <div class="modal-body">
+                              <h4>Para Criar a sua SEED</h4>
+                              <p>Realize a criação de sua carteira IOTA, pela aplicação oficial da criptomoeda IOTA</p>
+                              <p>Após a instalação da aplicação, realize o passo a passso para geração de uma SEED válida e anote os 81 caracteres de sua seed; </p>
+                              <p>Para realizar a instalação da aplicação oficial Trinity Wallet <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.iota.trinity">Clique aqui</a> </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label for="password" class="control-label col-md-3">Senha</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="password" type="password" name="password" data-validate-length="6,16" class="form-control col-md-7 col-xs-12" required="required">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repita a senha</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
+                    </div>
+                  </div>
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                      <a href="/" class="btn btn-primary">Cancelar</a>
+
+                      <button id="send" type="submit" class="btn btn-success">Cadastrar</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% include ./template/footer %>
+  </body>
+</html>

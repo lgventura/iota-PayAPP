@@ -1,0 +1,231 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   'dateformart',
+1 verbose cli   'npm',
+1 verbose cli   'install',
+1 verbose cli   'dateformat' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData dateformart
+8 silly fetchPackageMetaData npm
+9 silly fetchPackageMetaData install
+10 silly fetchPackageMetaData dateformat
+11 silly fetchNamedPackageData dateformart
+12 silly mapToRegistry name dateformart
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/dateformart
+16 silly fetchNamedPackageData npm
+17 silly mapToRegistry name npm
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/npm
+21 silly fetchNamedPackageData install
+22 silly mapToRegistry name install
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry uri https://registry.npmjs.org/install
+26 silly fetchNamedPackageData dateformat
+27 silly mapToRegistry name dateformat
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npmjs.org/
+30 silly mapToRegistry uri https://registry.npmjs.org/dateformat
+31 verbose request uri https://registry.npmjs.org/dateformart
+32 verbose request no auth needed
+33 info attempt registry request try #1 at 12:18:18 AM
+34 verbose request id 8cb3a4e66147dc1b
+35 http request GET https://registry.npmjs.org/dateformart
+36 verbose request uri https://registry.npmjs.org/npm
+37 verbose request no auth needed
+38 info attempt registry request try #1 at 12:18:18 AM
+39 http request GET https://registry.npmjs.org/npm
+40 verbose request uri https://registry.npmjs.org/install
+41 verbose request no auth needed
+42 info attempt registry request try #1 at 12:18:18 AM
+43 http request GET https://registry.npmjs.org/install
+44 verbose request uri https://registry.npmjs.org/dateformat
+45 verbose request no auth needed
+46 info attempt registry request try #1 at 12:18:18 AM
+47 verbose etag W/"5a9ebec15922bfd196071870698c9eee"
+48 verbose lastModified Sat, 26 May 2018 21:47:51 GMT
+49 http request GET https://registry.npmjs.org/dateformat
+50 http 304 https://registry.npmjs.org/dateformat
+51 verbose headers { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+51 verbose headers   connection: 'keep-alive',
+51 verbose headers   'set-cookie':
+51 verbose headers    [ '__cfduid=d0d0f0dd5edd4b9cb3a5bd56fed0257731538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+51 verbose headers   'cf-cache-status': 'HIT',
+51 verbose headers   'cache-control': 'max-age=300',
+51 verbose headers   'cf-ray': '463c42bc98098150-GRU',
+51 verbose headers   etag: '"5a9ebec15922bfd196071870698c9eee"',
+51 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+51 verbose headers   'last-modified': 'Sat, 26 May 2018 21:47:51 GMT',
+51 verbose headers   vary: 'accept-encoding, accept',
+51 verbose headers   server: 'cloudflare' }
+52 silly get cb [ 304,
+52 silly get   { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+52 silly get     connection: 'keep-alive',
+52 silly get     'set-cookie':
+52 silly get      [ '__cfduid=d0d0f0dd5edd4b9cb3a5bd56fed0257731538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+52 silly get     'cf-cache-status': 'HIT',
+52 silly get     'cache-control': 'max-age=300',
+52 silly get     'cf-ray': '463c42bc98098150-GRU',
+52 silly get     etag: '"5a9ebec15922bfd196071870698c9eee"',
+52 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+52 silly get     'last-modified': 'Sat, 26 May 2018 21:47:51 GMT',
+52 silly get     vary: 'accept-encoding, accept',
+52 silly get     server: 'cloudflare' } ]
+53 verbose etag https://registry.npmjs.org/dateformat from cache
+54 verbose get saving dateformat to /home/lgustavo/.npm/registry.npmjs.org/dateformat/.cache.json
+55 http 200 https://registry.npmjs.org/install
+56 verbose headers { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+56 verbose headers   'content-type': 'application/json; charset=UTF-8',
+56 verbose headers   'transfer-encoding': 'chunked',
+56 verbose headers   connection: 'keep-alive',
+56 verbose headers   'set-cookie':
+56 verbose headers    [ '__cfduid=dac5aec765db17be492708dd13c1f67781538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+56 verbose headers   'cf-cache-status': 'HIT',
+56 verbose headers   'cache-control': 'max-age=300',
+56 verbose headers   'cf-ray': '463c42bc8b164a36-GRU',
+56 verbose headers   etag: 'W/"5963119bd9b86578664f710277d9217c"',
+56 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+56 verbose headers   'last-modified': 'Tue, 26 Jun 2018 19:44:14 GMT',
+56 verbose headers   vary: 'accept-encoding, accept',
+56 verbose headers   server: 'cloudflare',
+56 verbose headers   'content-encoding': 'gzip' }
+57 silly get cb [ 200,
+57 silly get   { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+57 silly get     'content-type': 'application/json; charset=UTF-8',
+57 silly get     'transfer-encoding': 'chunked',
+57 silly get     connection: 'keep-alive',
+57 silly get     'set-cookie':
+57 silly get      [ '__cfduid=dac5aec765db17be492708dd13c1f67781538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+57 silly get     'cf-cache-status': 'HIT',
+57 silly get     'cache-control': 'max-age=300',
+57 silly get     'cf-ray': '463c42bc8b164a36-GRU',
+57 silly get     etag: 'W/"5963119bd9b86578664f710277d9217c"',
+57 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+57 silly get     'last-modified': 'Tue, 26 Jun 2018 19:44:14 GMT',
+57 silly get     vary: 'accept-encoding, accept',
+57 silly get     server: 'cloudflare',
+57 silly get     'content-encoding': 'gzip' } ]
+58 verbose get saving install to /home/lgustavo/.npm/registry.npmjs.org/install/.cache.json
+59 http 404 https://registry.npmjs.org/dateformart
+60 verbose headers { date: 'Wed, 03 Oct 2018 03:18:19 GMT',
+60 verbose headers   'content-type': 'application/json',
+60 verbose headers   'content-length': '21',
+60 verbose headers   connection: 'keep-alive',
+60 verbose headers   'set-cookie':
+60 verbose headers    [ '__cfduid=d9a9b5fe2e72d12749e909258d7b8a02b1538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+60 verbose headers   'cf-cache-status': 'MISS',
+60 verbose headers   'cache-control': 'max-age=300',
+60 verbose headers   'cf-ray': '463c42bc7d4b4a4e-GRU',
+60 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+60 verbose headers   vary: 'accept-encoding, accept',
+60 verbose headers   server: 'cloudflare' }
+61 silly get cb [ 404,
+61 silly get   { date: 'Wed, 03 Oct 2018 03:18:19 GMT',
+61 silly get     'content-type': 'application/json',
+61 silly get     'content-length': '21',
+61 silly get     connection: 'keep-alive',
+61 silly get     'set-cookie':
+61 silly get      [ '__cfduid=d9a9b5fe2e72d12749e909258d7b8a02b1538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+61 silly get     'cf-cache-status': 'MISS',
+61 silly get     'cache-control': 'max-age=300',
+61 silly get     'cf-ray': '463c42bc7d4b4a4e-GRU',
+61 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+61 silly get     vary: 'accept-encoding, accept',
+61 silly get     server: 'cloudflare' } ]
+62 silly fetchPackageMetaData Error: Not found : dateformart
+62 silly fetchPackageMetaData     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+62 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+62 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+62 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+62 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+62 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+62 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+62 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+62 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+62 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+62 silly fetchPackageMetaData  error for dateformart { Error: Not found : dateformart
+62 silly fetchPackageMetaData     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+62 silly fetchPackageMetaData     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+62 silly fetchPackageMetaData     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+62 silly fetchPackageMetaData     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+62 silly fetchPackageMetaData     at emitTwo (events.js:126:13)
+62 silly fetchPackageMetaData     at Request.emit (events.js:214:7)
+62 silly fetchPackageMetaData     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+62 silly fetchPackageMetaData     at emitOne (events.js:121:20)
+62 silly fetchPackageMetaData     at Request.emit (events.js:211:7)
+62 silly fetchPackageMetaData     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12) pkgid: 'dateformart', statusCode: 404, code: 'E404' }
+63 http 200 https://registry.npmjs.org/npm
+64 verbose headers { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+64 verbose headers   'content-type': 'application/octet-stream',
+64 verbose headers   'content-length': '8099623',
+64 verbose headers   connection: 'keep-alive',
+64 verbose headers   'set-cookie':
+64 verbose headers    [ '__cfduid=d8d3fd01f7061aa247bfe879cd445b56b1538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+64 verbose headers   'cf-cache-status': 'HIT',
+64 verbose headers   'cache-control': 'max-age=300',
+64 verbose headers   'accept-ranges': 'bytes',
+64 verbose headers   'cf-ray': '463c42bc79934c8a-GRU',
+64 verbose headers   etag: '"819232ae9bba0c3d9339a84460665764"',
+64 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+64 verbose headers   'last-modified': 'Wed, 29 Aug 2018 18:23:44 GMT',
+64 verbose headers   vary: 'accept-encoding, accept',
+64 verbose headers   'x-amz-meta-rev': '1984-3da252d93ed0670df494eabc793a1b6c',
+64 verbose headers   server: 'cloudflare' }
+65 silly get cb [ 200,
+65 silly get   { date: 'Wed, 03 Oct 2018 03:18:18 GMT',
+65 silly get     'content-type': 'application/octet-stream',
+65 silly get     'content-length': '8099623',
+65 silly get     connection: 'keep-alive',
+65 silly get     'set-cookie':
+65 silly get      [ '__cfduid=d8d3fd01f7061aa247bfe879cd445b56b1538536698; expires=Thu, 03-Oct-19 03:18:18 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+65 silly get     'cf-cache-status': 'HIT',
+65 silly get     'cache-control': 'max-age=300',
+65 silly get     'accept-ranges': 'bytes',
+65 silly get     'cf-ray': '463c42bc79934c8a-GRU',
+65 silly get     etag: '"819232ae9bba0c3d9339a84460665764"',
+65 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+65 silly get     'last-modified': 'Wed, 29 Aug 2018 18:23:44 GMT',
+65 silly get     vary: 'accept-encoding, accept',
+65 silly get     'x-amz-meta-rev': '1984-3da252d93ed0670df494eabc793a1b6c',
+65 silly get     server: 'cloudflare' } ]
+66 verbose get saving npm to /home/lgustavo/.npm/registry.npmjs.org/npm/.cache.json
+67 silly rollbackFailedOptional Starting
+68 silly rollbackFailedOptional Finishing
+69 silly runTopLevelLifecycles Starting
+70 silly runTopLevelLifecycles Finishing
+71 silly install printInstalled
+72 verbose stack Error: Not found : dateformart
+72 verbose stack     at makeError (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+72 verbose stack     at CachingRegistryClient.<anonymous> (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+72 verbose stack     at Request._callback (/usr/share/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+72 verbose stack     at Request.self.callback (/usr/share/npm/node_modules/request/request.js:198:22)
+72 verbose stack     at emitTwo (events.js:126:13)
+72 verbose stack     at Request.emit (events.js:214:7)
+72 verbose stack     at Request.<anonymous> (/usr/share/npm/node_modules/request/request.js:1082:10)
+72 verbose stack     at emitOne (events.js:121:20)
+72 verbose stack     at Request.emit (events.js:211:7)
+72 verbose stack     at IncomingMessage.<anonymous> (/usr/share/npm/node_modules/request/request.js:1009:12)
+73 verbose statusCode 404
+74 verbose pkgid dateformart
+75 verbose cwd /home/lgustavo/iota-payApp
+76 error Linux 4.15.0-34-generic
+77 error argv "/usr/bin/node" "/usr/bin/npm" "i" "dateformart" "npm" "install" "dateformat"
+78 error node v8.10.0
+79 error npm  v3.5.2
+80 error code E404
+81 error 404 Not found : dateformart
+82 error 404
+83 error 404 'dateformart' is not in the npm registry.
+84 error 404 You should bug the author to publish it (or use the name yourself!)
+85 error 404 Note that you can also install from a
+86 error 404 tarball, folder, http url, or git url.
+87 verbose exit [ 1, true ]

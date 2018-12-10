@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <% include ./template/head %>
+
+  <body class="nav-md">
+
+      <% include ./template/header %>
+
+
+    <div class="right_col" role="main">
+      <div class="">
+        <div class="row top_tiles">
+          <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tile-stats">
+
+              <div class="count" style="color:#347bca">Status:</div>
+
+              <% if (dados[0].status == 1) { %>
+                <h3><i class="fa fa-check-circle-o"></i>Liberado para Estacionar!</h3>
+              <% }else if (dados[0].status == 3) { %>
+                <h3 style="color: red;"><i class="fa fa-times-circle"></i>Bloqueado para utilização!</h3>
+              <% }else if (dados[0].status == 2) { %>
+                <h3>Em utilização (Estacionado)</h3>
+              <% } %>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="animated flipInY col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tile-stats">
+
+              <div class="count" style="color:green">Saldo IOTA:</div>
+
+                <h3>0.0</h3>
+
+            </div>
+          </div>
+        </div>
+
+        <% if (dados[0].status == 1) { %>
+          <form class="form-horizontal form-label-left input_mask" action="/pay" method="post">
+        <% }else if (dados[0].status == 2) { %>
+          <form class="form-horizontal form-label-left input_mask" action="/exit" method="post">
+        <% } %>
+
+            <div class="form-group">
+              <h5> <label class="control-label col-md-6 col-sm-6 col-xs-12">Endereço de pagamento IOTA do Estacionamento: </label> </h5>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <input type="text" class="form-control" style="word-wrap: break-word;font-size: 10px;" name="adress" readonly="readonly" value="<%= endereco[0].endereco %>">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <input type="hidden" class="form-control" name="seed" readonly="readonly" value="<%= dados[0].seed%>">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <input type="hidden" class="form-control" name="id" readonly="readonly" value="<%= dados[0].id%>">
+              </div>
+            </div>
+
+
+              <div class="form-group">
+                  <h5> <label class="control-label col-md-6 col-sm-6 col-xs-12"> Quantidade IOTA a ser paga: </label> </h5>
+              </div>
+
+            <div class="row col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+              <% if (dados[0].status == 1) { %>
+                <input type="number"  min="1" max="50" step="1" class="form-control has-feedback-left" id="inputSuccess2" value="1" name="valor">
+              <% }else if (dados[0].status == 2) { %>
+                <input type="number"  min="0" max="50" step="1" class="form-control has-feedback-left" id="inputSuccess2" value="0" name="valor" readonly="readonly">
+              <% } %>
+
+              <span class="fa fa-credit-card form-control-feedback left" aria-hidden="true"></span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+              <% if (dados[0].status == 1) { %>
+                <button type="submit" class="btn btn-success btn-round btn-lg col-md-12 col-sm-12 col-xs-12">Solicitar Entrada</button>
+              <% }else if (dados[0].status == 2) { %>
+                <button type="submit" class="btn btn-warning btn-round btn-lg col-md-12 col-sm-12 col-xs-12">Solicitar Saida</button>
+              <% } %>
+
+            </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    <% include ./template/footer %>
+  </body>
+</html>

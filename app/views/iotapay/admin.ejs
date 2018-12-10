@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <% include ./template/head %>
+
+  <body class="nav-md">
+
+      <% include ./template/header %>
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Painel <small>de administração do sistema</small></h3>
+            </div>
+
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2>Clientes Cadastrados</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+                  <table class="table table-striped">
+
+                    <thead>
+                      <tr>
+                        <th style="width: 30%">E-mail</th>
+                        <th style="width: 10%">Tipo de acesso</th>
+                        <th style="width: 15%">Status</th>
+                        <th style="width: 20%">#Ações</th>
+                      </tr>
+                    </thead>
+
+                      <tbody>
+                        <% for (var key in users){ %>
+
+                          <%
+
+                            if(users[key].status == 1){
+                              status = "Liberado";
+                            }else if(users[key].status == 2){
+                              status = "Estacionado";
+                            }else if(users[key].status == 3){
+                              status = "Bloqueado";
+                            }
+
+                            if(users[key].acesso == 1){
+                              acesso = "Comum";
+                            }else if(users[key].acesso == 2){
+                              acesso = "Admin";
+                            }
+
+                          %>
+
+                          <tr>
+                            <td style="font-size:8px"><%= users[key].email %></td>
+                            <td><%= acesso %></td>
+                            <td><%= status%></td>
+                            <td>
+                              <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm<%= users[key].id%>"><i class="fa fa-pencil"></i> Editar</button>
+                              <div class="modal fade bs-example-modal-sm<%= users[key].id%>" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                                      </button>
+                                      <h4 class="modal-title" id="myModalLabel2">Editar Usuário: <%= users[key].nome %></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form class="form-horizontal form-label-left" action="/edit/<%= dados[0].id%>" method="post" novalidate>
+                                        <div class="form-group">
+                                          <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <input type="hidden" class="form-control" name="id" readonly="readonly" value="<%= users[key].id%>">
+                                          </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                          <label class="col-md-3 col-sm-3 col-xs-12 control-label">Status:</label>
+
+                                          <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="radio">
+                                              <label>
+                                                <input type="radio" class="flat" <% if(users[key].status == 1) {%> checked <% } %> name="status" value="1" > Liberado
+                                              </label>
+                                            </div>
+                                            <div class="radio">
+                                              <label>
+                                                <input type="radio" class="flat" <% if(users[key].status == 2) {%> checked <% } %> name="status" value="2" > Estacionado
+                                              </label>
+                                            </div>
+                                            <div class="radio">
+                                              <label>
+                                                <input type="radio" class="flat" <% if(users[key].status == 3) {%> checked <% } %> name="status" value="3" > Bloqueado
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="form-group">
+                                          <label class="col-md-3 col-sm-3 col-xs-12 control-label">Tipo de acesso:</label>
+
+                                          <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="radio">
+                                              <label>
+                                                <input type="radio" class="flat" <% if(users[key].acesso == 1) {%> checked <% } %> name="acesso" value="1" > Comum
+                                              </label>
+                                            </div>
+                                            <div class="radio">
+                                              <label>
+                                                <input type="radio" class="flat" <% if(users[key].acesso == 2) {%> checked <% } %> name="acesso" value="2" > Admin
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="ln_solid"></div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                                          <button id="send" type="submit" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Salvar</button>
+                                        </div>
+
+                                      </form>
+                                    </div>
+
+
+                                  </div>
+                                </div>
+                              </div>
+                              <a href="/delete/<%= users[key].id%>/<%= dados[0].id%>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Deletar </a>
+                            </td>
+                          </tr>
+
+                        <% } %>
+
+
+                      </tbody>
+
+                  </table>
+
+                </div>
+              </div>
+            </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /page content -->
+    <% include ./template/footer %>
+  </body>
+</html>
